@@ -220,7 +220,7 @@ class ExcelDataNode(DataNode, _FileDataNodeMixin, _TabularDataNodeMixin):
                 else:
                     for i, row in enumerate(res):
                         res[i] = sheet_exposed_type(*row)
-                work_books[sheet_name] = res  # type: ignore
+                work_books[sheet_name] = res
         finally:
             excel_file.close()
 
