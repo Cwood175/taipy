@@ -227,7 +227,7 @@ class ExcelDataNode(DataNode, _FileDataNodeMixin, _TabularDataNodeMixin):
         if len(user_provided_sheet_names) == 1:
             return work_books[user_provided_sheet_names[0]]
 
-        return work_books
+        return work_books  # type: ignore
 
     def _read_as_numpy(self, path: str, sheet_names=None):
         sheets = self._read_as_pandas_dataframe(path=path, sheet_names=sheet_names)
